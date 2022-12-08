@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+import { onMounted, onUpdated, ref } from "vue";
 import type { Ref } from "vue";
 import essayService from "@/serivice/EssayService";
 import tagService from "@/serivice/TagService";
@@ -8,7 +8,7 @@ const props = defineProps({
   id: String,
 });
 let essays: Ref<Essay[]> = ref([]);
-onMounted(() => {
+function reset() {
   tagService
     .getTagById(Number(props.id))
     .then((response) => {
@@ -19,6 +19,12 @@ onMounted(() => {
       console.log(response.data);
       essays.value = response.data;
     });
+}
+onMounted(() => {
+  reset();
+});
+onUpdated(() => {
+  reset();
 });
 </script>
 <template>
