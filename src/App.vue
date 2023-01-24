@@ -27,10 +27,11 @@ import BlogFooter from "@/components/BlogFooter.vue";
   /*
   给footer留空间
   */
-  padding-bottom: 100px;
+  padding-bottom: 80px;
 }
 .layout-container .el-footer {
   position: absolute;
   bottom: 0;
+  min-width: 100%;
 }
 </style>
