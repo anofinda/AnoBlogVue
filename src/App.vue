@@ -8,9 +8,7 @@ import BlogFooter from "@/components/BlogFooter.vue";
       <el-header>
         <BlogMenu></BlogMenu>
       </el-header>
-      <el-main>
-        <router-view></router-view>
-      </el-main>
+      <el-main> <router-view></router-view> </el-main>
       <el-footer>
         <BlogFooter></BlogFooter>
       </el-footer>
@@ -18,10 +16,21 @@ import BlogFooter from "@/components/BlogFooter.vue";
   </div>
 </template>
 <style>
+.layout-container {
+  position: relative;
+  min-height: 100%;
+}
 .layout-container .el-header {
   padding: 0;
 }
-.layout-container .el-aside {
-  padding: 20px 0px;
+.layout-container .el-main {
+  /*
+  给footer留空间
+  */
+  padding-bottom: 100px;
+}
+.layout-container .el-footer {
+  position: absolute;
+  bottom: 0;
 }
 </style>

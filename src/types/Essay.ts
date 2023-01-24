@@ -8,4 +8,15 @@ interface Essay extends AbstractType {
   visible: boolean;
   lastUpdate: string;
 }
+const emptyEssay: Essay = {
+  id: 0,
+  tittle: "",
+  content: "",
+  tagName: "",
+  sticky: 0,
+  visible: true,
+  lastUpdate: "",
+  createdTime: "",
+};
+export { emptyEssay };
 export type { Essay };

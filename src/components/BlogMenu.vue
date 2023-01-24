@@ -4,12 +4,12 @@ import type { Ref } from "vue";
 import { useRoute } from "vue-router";
 import tagService from "@/serivice/TagService";
 import type { Tag } from "@/types/Tag";
+import type { AxiosResponse } from "axios";
 let tags: Ref<Tag[]> = ref([]);
 const route = useRoute();
-onMounted(() => {
-  tagService.getTags().then((response) => {
-    tags.value = response.data;
-  });
+onMounted(async () => {
+  const tagResponse: AxiosResponse = await tagService.getTags();
+  tags.value = tagResponse.data;
 });
 const prefix = "/tag/";
 </script>
