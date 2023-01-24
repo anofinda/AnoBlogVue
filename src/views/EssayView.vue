@@ -24,7 +24,14 @@ onBeforeRouteUpdate(() => {
 </script>
 <template>
   <el-card>
-    <h1>{{ essay.tittle }}</h1>
-    <div>{{ essay.content }}</div>
+    <div id="essay-tittle">{{ essay.tittle }}</div>
+    <div>创建时间：{{ essay.createdTime }}</div>
+    <div>最近更新时间：{{ essay.lastUpdate }}</div>
+    <v-md-preview :text="essay.content"></v-md-preview>
   </el-card>
 </template>
+<style>
+#essay-tittle {
+  font-size: 32px;
+}
+</style>
