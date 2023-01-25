@@ -20,6 +20,7 @@ const prefix = "/tag/";
     :default-active="route.path"
     router
   >
+    <el-menu-item index="/">anofinda</el-menu-item>
     <el-menu-item
       v-for="tag in tags"
       :key="tag.id"
