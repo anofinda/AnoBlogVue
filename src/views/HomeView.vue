@@ -9,14 +9,13 @@ let introduction: Ref<Essay> = ref(emptyEssay);
 onMounted(async () => {
   const introductionResponse: AxiosResponse =
     await essayService.getEssaysByTagName("个人介绍");
-  introduction.value = introductionResponse.data;
+  console.log(introductionResponse);
+  introduction.value = introductionResponse.data[0];
 });
 </script>
 <template>
   <el-card>
     <div id="introduction-tittle">{{ introduction.tittle }}</div>
-    <div>创建时间：{{ introduction.createdTime }}</div>
-    <div>最近更新时间：{{ introduction.lastUpdate }}</div>
     <v-md-preview :text="introduction.content"></v-md-preview>
   </el-card>
 </template>
