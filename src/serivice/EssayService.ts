@@ -1,6 +1,6 @@
 import type { Essay } from "@/types/Essay";
 import type { Tag } from "@/types/Tag";
-import http from "@/web/http";
+import http from "@/web/BlogApi";
 import type { AxiosResponse } from "axios";
 class EssayService {
   getEssaysByTagName(tagName: string): Promise<AxiosResponse<Tag[], any>> {

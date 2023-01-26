@@ -29,15 +29,26 @@ onBeforeRouteUpdate((to, from) => {
 });
 </script>
 <template>
-  <el-card v-for="essay in essays" :key="essay.id">
-    <router-link :to="'/essay/' + essay.id.toString()" custom v-slot="{ href }">
-      <el-link :href="href" :underline="false" type="primary" class="tag-link">
-        {{ essay.tittle }}
-      </el-link>
-      <div>创建时间：{{ essay.createdTime }}</div>
-      <div>最近更新时间：{{ essay.lastUpdate }}</div>
-    </router-link>
-  </el-card>
+  <template v-for="essay in essays" :key="essay.id">
+    <el-card v-if="essay.visible">
+      <router-link
+        :to="'/essay/' + essay.id.toString()"
+        custom
+        v-slot="{ href }"
+      >
+        <el-link
+          :href="href"
+          :underline="false"
+          type="primary"
+          class="tag-link"
+        >
+          {{ essay.tittle }}
+        </el-link>
+        <div>创建时间：{{ essay.createdTime }}</div>
+        <div>最近更新时间：{{ essay.lastUpdate }}</div>
+      </router-link>
+    </el-card>
+  </template>
 </template>
 <style>
 .tag-link {
