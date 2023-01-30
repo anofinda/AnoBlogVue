@@ -34,7 +34,4 @@ onBeforeRouteUpdate(() => {
 #essay-tittle {
   font-size: 32px;
 }
-.vuepress-markdown-body {
-  padding: 0px;
-}
 </style>

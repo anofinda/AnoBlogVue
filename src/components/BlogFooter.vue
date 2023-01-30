@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import GithubMarkIcon from "@/views/icons/GithubMarkIcon.vue";
+import GithubMarkIcon from "@/components/icons/GithubMarkIcon.vue";
 </script>
 <template>
   <el-row :gutter="20">

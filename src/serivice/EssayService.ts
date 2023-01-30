@@ -4,7 +4,7 @@ import http from "@/web/BlogApi";
 import type { AxiosResponse } from "axios";
 class EssayService {
   getEssaysByTagName(tagName: string): Promise<AxiosResponse<Tag[], any>> {
-    return http.get("/essay/tag", {
+    return http.get("/essay", {
       params: {
         tagName: tagName,
       },
