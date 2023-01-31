@@ -1,9 +1,9 @@
 import Tag from "@/views/TagView.vue";
 import Home from "@/views/HomeView.vue";
 import Essay from "@/views/EssayView.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",
